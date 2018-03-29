@@ -5,13 +5,13 @@ filePath = os.path.join('..', 'Datasets', 'gl2010_17', 'GL2017.TXT')
 with open(filePath, 'r') as f:
     lineOne = f.readline()
 
-lineOne = lineOne.split(',')
+lineOneList = lineOne.split(',')
 
-for i in range(len(lineOne)):
-    item = lineOne[i]
+for i in range(len(lineOneList)):
+    item = lineOneList[i]
     if '"' not in item:
-        lineOne[i] = int(item)
+        lineOneList[i] = int(item)
     else:
-        lineOne[i] = item.replace('"', '')
+        lineOneList[i] = item.replace('"', '')
 
-print(lineOne)
+print(lineOneList)
