@@ -1,17 +1,69 @@
 import os
+import numpy as np 
+import matplotlib.pyplot as plt
+#from mpl_toolkits.mplot3d import Axes3D
+
+#fig = plt.figure()
+#ax = fig.add_subplot(111, projection='3d')
 
 filePath = os.path.join('..', 'Datasets', 'gl2010_17', 'GL2017.TXT')
 
+x=[]
+y=[]
+# z=[]
+
+daylist = ['Mon', 'Tue', "Wed", 'Thu', 'Fri', 'Sat','Sun']
+teamList = [0, ]
+
 with open(filePath, 'r') as f:
-    lineOne = f.readline()
+    
+    for lineOne in f:
+        
 
-lineOneList = lineOne.split(',')
+        #clean data
+        lineOneList = lineOne.split(',')
+        for i in range(len(lineOneList)):
+            item = lineOneList[i]
+            lineOneList[i] = item.replace('"', '')
+        
+        
+        #plot at-bats v hit v homeruns
+        # x.append(int(lineOneList[21])) #at bat
+        # y.append(int(lineOneList[22])) #hit
+        # z.append(int(lineOneList[25])) #homerun
+        
 
-for i in range(len(lineOneList)):
-    item = lineOneList[i]
-    if '"' not in item:
-        lineOneList[i] = int(item)
-    else:
-        lineOneList[i] = item.replace('"', '')
+        # x.append(int(lineOneList[49]))
+        # y.append(int(lineOneList[50]))
+        # z.append(int(lineOneList[53]))
 
-print(lineOneList)
+        #if lineOneList[16] == 'PHO01':
+            day = lineOneList[2]
+            nd = lineOneList[12]
+            attend = lineOneList[17]
+
+            if nd == 'D':
+                dayMod = daylist.index(day)*2
+            else:
+                dayMod = daylist.index(day)*2+1
+
+            x.append(dayMod)
+            y.append(int(attend))
+
+
+         
+# Axes3D.scatter(ax,x,y,zs=z)
+# plt.xlabel("at bat")
+# plt.ylabel('hit')
+
+plt.xlabel('gametime')
+plt.ylabel('attendance')
+
+plt.plot(x,y, 'bo')
+
+
+plt.show()
+
+
+    
+
