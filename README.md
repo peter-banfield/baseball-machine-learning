@@ -10,4 +10,4 @@ Using linear regression to predict baseball game attendance.
 
 # Cleaning the Data
 
-# Predicting attendence
+# Predicting attendance
