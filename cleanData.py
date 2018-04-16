@@ -43,7 +43,6 @@ def normPark(parkID, filePath=os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
     Output: list of normalized class lists with first element in each list being name of list"""
     dayTimeDict = {}
     visitDict = {}
-    parkDict = {}
     
     with open(filePath, 'r') as data:
         
@@ -54,21 +53,17 @@ def normPark(parkID, filePath=os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
             
             dayTimeDict = addToDict((elements[1], elements[6]), dayTimeDict, int(elements[8]))
             visitDict = addToDict(elements[2], visitDict, int(elements[8]))
-            parkDict = addToDict(elements[7], parkDict, int(elements[8]))
 
     dayTimeDict = avgAttend(dayTimeDict)
     visitDict = avgAttend(visitDict)
-    parkDict = avgAttend(parkDict)
 
     dayTimeList = normalize(dayTimeDict)
     visitList = normalize(visitDict)
-    parkList = normalize(parkDict) 
 
     dayTimeList.insert(0, 'dayTimeList')
     visitList.insert(0, 'visitList')
-    parkList.insert(0, 'parkList')
 
-    masterList = [dayTimeList, visitList, parkList]    
+    masterList = [dayTimeList, visitList]    
     
     return masterList
 

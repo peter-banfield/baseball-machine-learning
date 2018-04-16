@@ -3,11 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from cleanData import normPark
 
-parkID = 'HOU03'
+parkID = 'CHI11'
 
 MasterList = normPark(parkID)
 
-classList = MasterList[0][1:]
+classList = MasterList[1][1:]
 
 dataPath = os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
 
@@ -20,8 +20,10 @@ with open(dataPath, 'r') as data:
 
         if parkID == l[7]:
             y.append(int(l[8]))
+            # time+day
             # x.append(classList.index((l[1],l[6])))
-            x.append(int(l[5]))
+            # visit
+            # x.append(classList.index(l[2]))
 
 plt.plot(x,y, 'bo')
 plt.show()
