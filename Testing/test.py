@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 #fig = plt.figure()
 #ax = fig.add_subplot(111, projection='3d')
 
-filePath = os.path.join('..', 'Datasets', 'gl2010_17', 'GL2017.TXT')
+dataFilePath = os.path.join('..', 'Datasets', 'Cleaned', 'CGL2017.TXT')
+clssFilePath = os.path.join('..', 'normalizedClasses.TXT')
 
 x=[]
 y=[]
