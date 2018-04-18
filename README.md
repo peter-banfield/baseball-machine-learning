@@ -41,5 +41,7 @@ Starting with the data acquired from Retrosheet we pulled only the features of i
 | 13 | 16 | Protest information: <ul><li>"P" -- the game was protested by an unidentified team </li><li>"V" -- a disallowed protest was made by the visiting team </li><li>"H" -- a disallowed protest was made by the home team </li><li>"X" -- an upheld protest was made by the visiting team </li><li>"Y" -- an upheld protest was made by the home team </li></ul>Note: two of these last four codes can appear in the field (if both teams protested the game). |
 | 14 | 10 | Visiting team score (unquoted) |
 | 15 | 11 | Home team score (unquoted) |
+| 16 | Calculated | Visiting team win percentage |
+| 17 | Calculated | Home team win percentage |
 
 # Predicting attendance
