@@ -11,8 +11,10 @@ with open(inFilePath, 'r') as rf:
         for line in rf:
             l = line.strip().split(",")            
             for e in elmList:
-                    
-                if e == elmList[-1] and e != 10:
+                
+                if l[17] == "":
+                   pass 
+                elif e == elmList[-1] and e != 10:
                     of.write(l[e].replace('"', ''))
                 else:
                     of.write(l[e].replace('"', '')+',')
@@ -33,10 +35,10 @@ with open(inFilePath, 'r') as rf:
 
                     hteamwp = round(teamDict[l[6]][0]/teamDict[l[6]][1], 3)
                     vteamwp = round(teamDict[l[3]][0]/teamDict[l[3]][1], 3)
-                    
-                    of.write(str(vteamwp)+","+str(hteamwp))
-                    if e != elmList[-1]:
-                        of.write(",")
+                    if l[17] != "":
+                        of.write(str(vteamwp)+","+str(hteamwp))
+                        if e != elmList[-1]:
+                            of.write(",")
 
             of.write('\n')
 
