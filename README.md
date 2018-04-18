@@ -20,7 +20,7 @@ Using linear regression to predict baseball game attendance.
     * Double/Triple header
 
 # Cleaning the Data
-Starting with the data acquired from Retrosheet we pulled only the features of interest to the project. We further remove any entries with "Bad" data, that is missing fields or 
+Starting with the data acquired from Retrosheet we pulled only the features of interest to the project. 
 
 ## Cleaned Data File Fields
 | Position in Cleaned Data | Position in Source Data | Explanation of Field |
