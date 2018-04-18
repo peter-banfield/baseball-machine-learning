@@ -39,6 +39,6 @@ with open(inFilePath, 'r') as rf:
                         of.write(str(vteamwp)+","+str(hteamwp))
                         if e != elmList[-1]:
                             of.write(",")
-
-            of.write('\n')
+            if l[17] != "":
+                of.write('\n')
 
