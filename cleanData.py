@@ -94,20 +94,20 @@ filePath = os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
 # visitList = normalize(visitDict)
 # parkList = normalize(parkDict)
 
-outFilePath = os.path.join(parkID+'Classes.txt')
+# outFilePath = os.path.join(parkID+'Classes.txt')
 
-listNorm = normPark(parkID, filePath)
+# listNorm = normPark(parkID, filePath)
 
-with open(outFilePath, 'w') as outFile:
-    for l in listNorm:
-        for clss in l:
-            if type(clss) == type((1,2)):
-                clss = clss[0]+clss[1]
-                if clss == l[-1][0]+l[-1][1]:
-                    outFile.write(str(clss)+'\n')
-                else:
-                    outFile.write(str(clss)+',')
-            elif clss == l[-1]:
-                outFile.write(str(clss)+'\n')
-            else:
-                outFile.write(str(clss)+',')
+# with open(outFilePath, 'w') as outFile:
+#     for l in listNorm:
+#         for clss in l:
+#             if type(clss) == type((1,2)):
+#                 clss = clss[0]+clss[1]
+#                 if clss == l[-1][0]+l[-1][1]:
+#                     outFile.write(str(clss)+'\n')
+#                 else:
+#                     outFile.write(str(clss)+',')
+#             elif clss == l[-1]:
+#                 outFile.write(str(clss)+'\n')
+#             else:
+#                 outFile.write(str(clss)+',')
