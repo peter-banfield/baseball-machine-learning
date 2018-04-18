@@ -1,7 +1,8 @@
 import os
 
-inFilePath = os.path.join('Datasets', 'gl2010_17', 'GL2017.TXT')
-outFilePath = os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
+inFilePath = os.path.join('gl2010_17', 'GL2017.TXT')
+outFilePath = os.path.join('Cleaned', 'CGL2017.txt')
+
 with open(inFilePath, 'r') as rf:
     with open(outFilePath, 'w') as of:
 
@@ -33,7 +34,6 @@ with open(inFilePath, 'r') as rf:
 
                     hteamwp = round(teamDict[l[6]][0]/teamDict[l[6]][1], 3)
                     vteamwp = round(teamDict[l[3]][0]/teamDict[l[3]][1], 3)
-                    print(vteamwp, hteamwp)
                     
                     of.write(str(vteamwp)+","+str(hteamwp))
                     if e != elmList[-1]:
