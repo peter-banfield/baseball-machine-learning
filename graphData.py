@@ -1,50 +1,33 @@
 import os
 import numpy as np 
 import matplotlib.pyplot as plt
-from cleanData import normPark
-# for 3d plotting
-# from mpl_toolkits.mplot3d import Axes3D
-# fig = plt.figure()
-# ax = fig.add_subplot(111, projection='3d')
-
-parkID = 'PHI13'
-
-MasterList = normPark(parkID)
-
-# masterList = [dayTimeList, visitList]    
-classDict = {}
-for l in MasterList:
-    k = l.pop(0)
-    classDict[k] = l
+from mpl_toolkits.mplot3d import Axes3D
 
 
-dataPath = os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
 
-x = []
-y = []
-z = []
+def twoDPlot(x, y, weights):
+    plt.plot(x,y, 'bo')
+    xmin = min(x) 
+    xmax = max(x)
+    # X = np.linspace(xmin, xmax, num=10)
+    X = [j for j in range(int(xmin),int(xmax)+1)]
+    # Y = np.multiply(weights[0][0], X).transpose()
+    Y = [weights[0][0]+weights[1][0] * e for e in X]
+    plt.plot(X, Y)
+    plt.show()
 
-with open(dataPath, 'r') as data:
-    for line in data:
-        l = line.strip().split(',')
+def threeDPlot(x, y, z, weights):
+    xmin = min(x) 
+    xmax = max(x)
+    ymin = min(y) 
+    ymax = max(y)
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    Axes3D.scatter(ax,x,y)
+    X = np.linspace(xmin,xmax).tolist()
+    Y = np.linspace(ymin,ymax).tolist()
+    Z = []
+    for i in range(len(X)):
+        Z.append(weights[0][0] + weights[1][0] * X[i] + weights[2][0] * Y[i])
 
-        try:
-            if parkID == l[7]:
-                y.append(int(l[8]))
-                # # time+day
-                # x.append(classDict['dayTimeList'].index((l[1],l[6])))
-                # visit
-                x.append(classDict['visitList'].index(l[2]))
-                # # win% home
-                # x.append(float(l[17]))
-                # # 3d x=win% y=gamenum z=attendance
-                # x.append(float(l[17]))
-                # y.append(int(l[5]))
-                # z.append(int(l[8]))
-        except:
-            print(line, classList)
-            exit()
-
-# Axes3D.scatter(ax,x,y,zs=z)
-plt.plot(x,y, 'bo')
-plt.show()
+    Axes3D.plot_surface(X,Y,Z)
