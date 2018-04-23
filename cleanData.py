@@ -38,7 +38,7 @@ def normalize(classDict):
 
     return classList
 
-def normPark(parkID, filePath=os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')):
+def normData(parkID, filePath=os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')):
     """Input: parkId representing the stadium, path to data file
     Output: list of normalized class lists with first element in each list being name of list"""
     dayTimeDict = {}
@@ -66,48 +66,3 @@ def normPark(parkID, filePath=os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
     masterList = [dayTimeList, visitList]    
     
     return masterList
-
-parkID = 'HOU03'
-filePath = os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
-
-
-
-# # key = class, element = (sumAttend, numSum)
-# dayTimeDict = {}
-# visitDict = {}
-# parkDict = {}
-
-# with open(filePath, 'r') as inFile:
-
-#     for line in inFile:
-#         elements = line.split(',')
-
-#         dayTimeDict = addToDict((elements[1], elements[6]), dayTimeDict, int(elements[8]))
-#         visitDict = addToDict(elements[2], visitDict, int(elements[8]))
-#         parkDict = addToDict(elements[7], parkDict, int(elements[8]))        
-
-# dayTimeDict = avgAttend(dayTimeDict)
-# visitDict = avgAttend(visitDict)
-# parkDict = avgAttend(parkDict)
-
-# dayTimeList = normalize(dayTimeDict)
-# visitList = normalize(visitDict)
-# parkList = normalize(parkDict)
-
-# outFilePath = os.path.join(parkID+'Classes.txt')
-
-# listNorm = normPark(parkID, filePath)
-
-# with open(outFilePath, 'w') as outFile:
-#     for l in listNorm:
-#         for clss in l:
-#             if type(clss) == type((1,2)):
-#                 clss = clss[0]+clss[1]
-#                 if clss == l[-1][0]+l[-1][1]:
-#                     outFile.write(str(clss)+'\n')
-#                 else:
-#                     outFile.write(str(clss)+',')
-#             elif clss == l[-1]:
-#                 outFile.write(str(clss)+'\n')
-#             else:
-#                 outFile.write(str(clss)+',')
