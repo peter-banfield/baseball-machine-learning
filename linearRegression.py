@@ -21,3 +21,11 @@ def regress(x, y):
     Y = makeMatrix(y).transpose()
     weight = linearRegression(X, Y)
     return weight.tolist()
+
+def getValue(W, x):
+    """Input: W = Weight Matrix x = feature matrix
+    Output: y value"""
+    y = 0
+    for i in range(len(W)):
+        y += W[i] * x[i]
+    return y
