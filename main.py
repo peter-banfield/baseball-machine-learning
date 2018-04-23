@@ -45,13 +45,14 @@ def doRegression(valList):
 
 
     w = regress(X, Y)
-
-    result = getValue(w, x)
+    print(w)
+    xValues = [1]
+    xValues.append(classDict['dayTimeList'].index(valList[2]))
+    xValues.append(classDict['visitList'].index(valList[1])) 
+    result = getValue(w, xValues)
 
 
     return result, w, getParkName(parkID)
-
-
 
 def main():
     
