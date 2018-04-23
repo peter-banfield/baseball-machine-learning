@@ -2,10 +2,6 @@ import os
 
 inFilePath = os.path.join('gl2010_17', 'GL2017.TXT')
 outFilePath = os.path.join('Cleaned', 'CGL2017.txt')
-<<<<<<< HEAD
-
-=======
->>>>>>> testing
 with open(inFilePath, 'r') as rf:
     with open(outFilePath, 'w') as of:
 
