@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from cleanData import normPark
 from linearRegression import regress, getValue
-from graphData import twoDPlot, threeDPlot
+from graphData import subPlot2D, threeDPlot
 from UI import setup, error, checkValues, getValues, makeButton, makeOutput, dataError
 
 def teamToPark(teamID):
@@ -32,8 +32,10 @@ def doRegression(valList):
         k = l.pop(0)
         classDict[k] = l
     
-    if valList[2] not in classDict['dayTimeList'] or valList[1] not in classDict['visitList']:
-        return None
+    if valList[2] not in classDict['dayTimeList']:
+        return 0
+    if valList[1] not in classDict['visitList']:
+        return 1
 
     X = []
     Y = []
@@ -53,8 +55,7 @@ def doRegression(valList):
     xValues.append(classDict['visitList'].index(valList[1])) 
     result = getValue(w, xValues)
 
-
-    return result, w, getParkName(parkID)
+    return result, w, getParkName(parkID), X, Y
 
 def main():
     
@@ -70,12 +71,14 @@ def main():
         valList = [teamDict[values[0]], teamDict[values[1]], (values[2][:3],values[3][:1])]
         root.destroy()
         regressed = doRegression(valList)
-        if regressed == None:
-            dataError()
+        if regressed == 0 or regressed == 1:
+            dataError(values, regressed)
             return None
         else:
-            result, weights, parkName = regressed
+            result, weights, parkName, X, Y = regressed
         makeOutput(values, result, weights, parkName)
+        threeDPlot(X, Y, weights) 
+        subPlot2D(X, Y, weights)
 
 
     #create button to confirm answers
