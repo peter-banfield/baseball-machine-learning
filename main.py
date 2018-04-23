@@ -1,13 +1,13 @@
 import os
 import numpy as np 
 import matplotlib.pyplot as plt
-from cleanData import normData
+from cleanData import normPark
 from linearRegression import regress
 from graphData import twoDPlot, threeDPlot
 
 parkID = 'HOU03'
 dataPath = os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
-MasterList = normData(parkID)
+MasterList = normPark(parkID)
 
 # masterList = [dayTimeList, visitList]    
 classDict = {}
