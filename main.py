@@ -82,7 +82,7 @@ def main():
 
 
     #create button to confirm answers
-    makeButton(window, buttonClicked)~
+    makeButton(window, buttonClicked)
     root.mainloop()
 
 main()
