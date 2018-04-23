@@ -92,7 +92,7 @@ def makeButton(window, do_stuff):
     button.grid(row = 5, column = 2)
     return button
 
-def dataError(values):
+def dataError(values, type):
     root = ttk.Tk()
     root.title("Output")
 
@@ -102,9 +102,13 @@ def dataError(values):
     window.columnconfigure(0, weight = 1)
     window.rowconfigure(0, weight = 1)
     window.pack(pady = 20, padx = 20)
-
-    label = ttk.Label(window, text="Insufficient data for "+values[0]+" vs "+values[1]+" on "+values[2]+" during the "+values[3]+".")
-    label.grid(row = 1, column = 1)
+    
+    if type == 0:
+        label = ttk.Label(window, text="No "+values[0]+" games are played on"+values[2]+" during the "+values[3]+".")
+        label.grid(row = 1, column = 1)
+    if type == 1:
+        label = ttk.Label(window, text="Insufficient data for "+values[0]+" vs "+values[1]+".")
+        label.grid(row = 1, column = 1)
     
     def end():
         root.destroy()
