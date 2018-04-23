@@ -5,9 +5,9 @@ from cleanData import normData
 from linearRegression import regress
 from graphData import twoDPlot, threeDPlot
 
-parkID = 'HOU03'
+teamID = 'HOU03'
 dataPath = os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
-MasterList = normData(parkID)
+MasterList = normData(teamID)
 
 # masterList = [dayTimeList, visitList]    
 classDict = {}
@@ -23,7 +23,7 @@ with open(dataPath, 'r') as data:
         l = line.strip().split(',')
 
 
-        if parkID == l[7]:
+        if teamID == l[7]:
             y.append(int(l[8]))
             # # time+day
             # x.append([1,classDict['dayTimeList'].index((l[1],l[6]))])
