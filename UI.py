@@ -92,6 +92,27 @@ def makeButton(window, do_stuff):
     button.grid(row = 5, column = 2)
     return button
 
+def dataError():
+    root = ttk.Tk()
+    root.title("Output")
+
+    #Setup Window
+    window = ttk.Frame(root)
+    window.grid(column=0,row=0)
+    window.columnconfigure(0, weight = 1)
+    window.rowconfigure(0, weight = 1)
+    window.pack(pady = 20, padx = 20)
+
+    label = ttk.Label(window, text="Insufficient data to regress.")
+    label.grid(row = 1, column = 1)
+    
+    def end():
+        root.destroy
+        
+    button = ttk.Button(window, text="OK",command=end)
+    button.grid(row = 2, column = 1)
+    root.mainloop()
+
 def makeOutput(values, result, w, parkName):
     root = ttk.Tk()
     root.title("Output")
