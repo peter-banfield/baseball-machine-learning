@@ -1,3 +1,0 @@
-dayTimeList,ThuN,TueN,MonN,ThuD,WedN,WedD,FriN,SunD,SatD,SatN,SunN
-visitList,WAS,CHA,DET,TBA,ATL,ARI,TEX,SEA,ANA,OAK,NYN,KCA,BAL,CLE,BOS,MIN,TOR,NYA
-parkList,HOU03
