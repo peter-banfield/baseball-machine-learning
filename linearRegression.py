@@ -27,5 +27,5 @@ def getValue(W, x):
     Output: y value"""
     y = 0
     for i in range(len(W)):
-        y += W[i] * x[i]
+        y += W[i][0] * x[i]
     return y
