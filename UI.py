@@ -84,6 +84,10 @@ def error(window):
 def getValues(objects):
     return [objects[0].get(),objects[1].get(),objects[2].get(),objects[3].get()]
 
+def makeButton():
+    button = ttk.Button(window, text="OK",command=do_stuff)
+    button.grid(row = 5, column = 2)
+    return button
 
 root, window, objects, choices, teamDict = setup()
 
@@ -97,7 +101,6 @@ def do_stuff(*args):
     root.destroy()
 
 #create button to confirm answers
-button = ttk.Button(window, text="OK",command=do_stuff)
-button.grid(row = 5, column = 2)
+button = makeButton()
 
 root.mainloop()
