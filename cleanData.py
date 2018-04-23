@@ -38,8 +38,8 @@ def normalize(classDict):
 
     return classList
 
-def normData(teamID, filePath=os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')):
-    """Input: teamID representing the team, path to data file
+def normData(parkID, filePath=os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')):
+    """Input: parkId representing the stadium, path to data file
     Output: list of normalized class lists with first element in each list being name of list"""
     dayTimeDict = {}
     visitDict = {}
@@ -48,7 +48,7 @@ def normData(teamID, filePath=os.path.join('Datasets', 'Cleaned', 'CGL2017.txt')
         
         for line in data:
             elements = line.strip().split(',')
-            if elements[4] != teamID:
+            if elements[7] != parkID:
                 continue
             
             dayTimeDict = addToDict((elements[1], elements[6]), dayTimeDict, int(elements[8]))
