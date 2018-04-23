@@ -104,7 +104,7 @@ def dataError(values, type):
     window.pack(pady = 20, padx = 20)
     
     if type == 0:
-        label = ttk.Label(window, text="No "+values[0]+" games are played on"+values[2]+" during the "+values[3]+".")
+        label = ttk.Label(window, text="No "+values[0]+" games are played on "+values[2]+" during the "+values[3]+".")
         label.grid(row = 1, column = 1)
     if type == 1:
         label = ttk.Label(window, text="Insufficient data for "+values[0]+" vs "+values[1]+".")
