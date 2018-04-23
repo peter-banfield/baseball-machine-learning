@@ -1,4 +1,5 @@
 import tkinter as ttk
+import os
 #disallow same team to be picked
     
 def setup():
@@ -23,12 +24,15 @@ def setup():
     teams = []
     teamDict = {}
     teams = []
-    with open("teamCodeList.txt") as file:
+    filename = os.path.join('Datasets', "teamCodeList.txt")
+    with open(filename, 'r') as file:
         for line in file:
             e = line.strip().split(" = ")
             teams.append(e[1])
             teamDict[e[1]] = e[0]
-            
+    
+    teams.sort()
+
     days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
     times = ['Day','Night']
 
@@ -84,23 +88,7 @@ def error(window):
 def getValues(objects):
     return [objects[0].get(),objects[1].get(),objects[2].get(),objects[3].get()]
 
-def makeButton():
+def makeButton(window, do_stuff):
     button = ttk.Button(window, text="OK",command=do_stuff)
     button.grid(row = 5, column = 2)
     return button
-
-root, window, objects, choices, teamDict = setup()
-
-#When button is pressed
-def do_stuff(*args):
-    values = getValues(objects)
-    if checkValues(values,choices):
-        error(window)
-        return
-    #Do Regression Here
-    root.destroy()
-
-#create button to confirm answers
-button = makeButton()
-
-root.mainloop()
