@@ -140,7 +140,7 @@ def makeOutput(values, result, w, parkName):
     label = ttk.Label(window, text="\t")
     label.grid(row = 6, column = 3)
 
-    label = ttk.Label(window, text="We Expect "+str(result)+" people attending the game at:")
+    label = ttk.Label(window, text="We Expect "+str(round(result))+" people attending the game at:")
     label.place(x=0,y=80)
 
     label = ttk.Label(window, text=parkName)
@@ -151,7 +151,7 @@ def makeOutput(values, result, w, parkName):
         label = ttk.Label(window, text="Weight"+str(i)+":")
         label.grid(row = rowNum + i, column = 1)
 
-        label = ttk.Label(window, text=str(round(w[i],2)))
+        label = ttk.Label(window, text=str(round(w[i][0],2)))
         label.grid(row = rowNum + i, column = 2)
 
     root.mainloop()
