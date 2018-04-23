@@ -7,7 +7,22 @@ Using linear regression to predict baseball game attendance.
      parties may contact Retrosheet at "www.retrosheet.org".
 
 # Development environment
+| Package | Version |
+| --- | --- |
+| python | 3.6.3 |
+| numpy | 1.14.0 |
+| matplotlib | 2.1.2 |
+| tkinter | 8.6 |
 
+# Using this Repo
+To use this repo as a program to predict baseball game attendance:
+1. clone this repo
+2. open a command line interface
+3. use python to run the main.py file
+4. make selections in the pop up window for each drop menu and click ok
+5. the next window will contain the predicted attendance for that game
+6. the next two windows will be plots of the data
+7. step 5 might produce an error message if so you will have to start again from step 3
 
 # Features of Interest
 * Stadium
@@ -63,3 +78,9 @@ Starting with the data acquired from Retrosheet we pulled only the features of i
    
    ### Calculations
    The data used to regress is dependent on user input. Once we have user input we pull a subset of the data and regress on it.
+
+# Future Work
+* More Data Features
+  * Weather
+* Look at more past data in the regression
+* {Chris add stuff here}
