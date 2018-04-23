@@ -92,5 +92,66 @@ def makeButton(window, do_stuff):
     button.grid(row = 5, column = 2)
     return button
 
-def makeOutput(values, result, weights, parkName):
-    pass
+def makeOutput(values, result, w, parkName):
+    root = ttk.Tk()
+    root.title("Output")
+
+    #Setup Window
+    window = ttk.Frame(root)
+    window.grid(column=0,row=0)
+    window.columnconfigure(0, weight = 1)
+    window.rowconfigure(0, weight = 1)
+    window.pack(pady = 20, padx = 20)
+
+    label = ttk.Label(window, text="\t")
+    label.grid(row = 1, column = 3)
+
+    label = ttk.Label(window, text="Based on your selection of:")
+    label.place(x=0,y=0)
+    
+    label = ttk.Label(window, text="Home Team:")
+    label.grid(row = 2, column = 1)
+
+    label = ttk.Label(window, text=values[0])
+    label.grid(row = 2, column = 2)
+
+    label = ttk.Label(window, text="Away Team:")
+    label.grid(row = 3, column = 1)
+
+    label = ttk.Label(window, text=values[1])
+    label.grid(row = 3, column = 2)
+
+    label = ttk.Label(window, text="Day:")
+    label.grid(row = 2, column = 4)
+
+    label = ttk.Label(window, text=values[2])
+    label.grid(row = 2, column = 5)
+
+    label = ttk.Label(window, text="Time:")
+    label.grid(row = 3, column = 4)
+
+    label = ttk.Label(window, text=values[3])
+    label.grid(row = 3, column = 5)
+
+    label = ttk.Label(window, text="\t")
+    label.grid(row = 4, column = 3)
+    label = ttk.Label(window, text="\t")
+    label.grid(row = 5, column = 3)
+    label = ttk.Label(window, text="\t")
+    label.grid(row = 6, column = 3)
+
+    label = ttk.Label(window, text="We Expect "+str(result)+" people attending the game at:")
+    label.place(x=0,y=80)
+
+    label = ttk.Label(window, text=parkName)
+    label.place(x=0,y=100)
+
+    rowNum = 8
+    for i in range(len(w)):
+        label = ttk.Label(window, text="Weight"+str(i)+":")
+        label.grid(row = rowNum + i, column = 1)
+
+        label = ttk.Label(window, text=str(round(w[i],2)))
+        label.grid(row = rowNum + i, column = 2)
+
+    root.mainloop()
