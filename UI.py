@@ -19,7 +19,13 @@ day = ttk.StringVar(root)
 time = ttk.StringVar(root)
 
 #Lists to choose from
-teams = ['Astros','Dodgers']
+teams = []
+teamDict = {}
+#with open() as file:
+    #for line in file:
+        #e = line.split(" = ")
+        #team.append(e[1])
+        #teamDict[e[1]] = e[0]
 days = ['Monday','Tuesday']
 times = ['Day','Night']
 
