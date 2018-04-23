@@ -21,7 +21,6 @@ def setup():
     day = ttk.StringVar(root)
     time = ttk.StringVar(root)
 
-    teams = []
     teamDict = {}
     teams = []
     filename = os.path.join('Datasets', "teamCodeList.txt")
@@ -92,3 +91,6 @@ def makeButton(window, do_stuff):
     button = ttk.Button(window, text="OK",command=do_stuff)
     button.grid(row = 5, column = 2)
     return button
+
+def makeOutput(values, result, weights, parkName):
+    pass
