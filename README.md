@@ -45,3 +45,4 @@ Starting with the data acquired from Retrosheet we pulled only the features of i
 | 17 | Calculated | Home team win percentage |
 
 # Predicting attendance
+print(teamDict[values[0]], teamDict[values[1]], values[2][:3],values[3][:1])
