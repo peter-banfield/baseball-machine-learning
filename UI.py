@@ -107,7 +107,7 @@ def dataError():
     label.grid(row = 1, column = 1)
     
     def end():
-        root.destroy
+        root.destroy()
         
     button = ttk.Button(window, text="OK",command=end)
     button.grid(row = 2, column = 1)

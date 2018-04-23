@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from cleanData import normPark
 from linearRegression import regress, getValue
 from graphData import twoDPlot, threeDPlot
-from UI import setup, error, checkValues, getValues, makeButton, makeOutput
+from UI import setup, error, checkValues, getValues, makeButton, makeOutput, dataError
 
 def teamToPark(teamID):
     filename = os.path.join('Datasets', "teamPark.txt")
@@ -31,6 +31,9 @@ def doRegression(valList):
     for l in MasterList:
         k = l.pop(0)
         classDict[k] = l
+    
+    if valList[2] not in classDict['dayTimeList'] or valList[1] not in classDict['visitList']:
+        return None
 
     X = []
     Y = []
@@ -45,7 +48,6 @@ def doRegression(valList):
 
 
     w = regress(X, Y)
-    print(w)
     xValues = [1]
     xValues.append(classDict['dayTimeList'].index(valList[2]))
     xValues.append(classDict['visitList'].index(valList[1])) 
@@ -63,11 +65,16 @@ def main():
         values = getValues(objects)
         if checkValues(values,choices):
             error(window)
-            return
+            return None
 
         valList = [teamDict[values[0]], teamDict[values[1]], (values[2][:3],values[3][:1])]
         root.destroy()
-        result, weights, parkName = doRegression(valList)
+        regressed = doRegression(valList)
+        if regressed == None:
+            dataError()
+            return None
+        else:
+            result, weights, parkName = regressed
         makeOutput(values, result, weights, parkName)
 
 
@@ -76,8 +83,6 @@ def main():
     root.mainloop()
 
 main()
-
-
 
 
     # with open(dataPath, 'r') as data:
