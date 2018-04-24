@@ -99,3 +99,26 @@ Starting with the data acquired from Retrosheet we pulled only the features of i
 ![Alt text](/Outputs/test1/3dplot.png?raw=true "3D Plot")
 ### 2D Plot
 ![Alt text](/Outputs/test1/2dplot.png?raw=true "2D Plot")
+
+## Test 2
+### Input Screen
+![Alt text](/Outputs/test2/input.png?raw=true "Input Screen") 
+### Output Screen
+![Alt text](/Outputs/test2/output.png?raw=true "Output Screen")
+### 3D Plot
+![Alt text](/Outputs/test2/3dplot.png?raw=true "3D Plot")
+### 2D Plot
+![Alt text](/Outputs/test2/2dplot.png?raw=true "2D Plot")
+
+## Test 3 - Invalid Inputs - Teams
+### Input Screen
+![Alt text](/Outputs/test3/input.png?raw=true "Input Screen") 
+### Output Screen
+![Alt text](/Outputs/test3/output.png?raw=true "Output Screen")
+
+
+## Test 4 - Invalid Inputs - Day+Time
+### Input Screen
+![Alt text](/Outputs/test4/input.png?raw=true "Input Screen") 
+### Output Screen
+![Alt text](/Outputs/test4/output.png?raw=true "Output Screen")
