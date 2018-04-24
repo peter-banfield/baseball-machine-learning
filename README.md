@@ -83,4 +83,19 @@ Starting with the data acquired from Retrosheet we pulled only the features of i
 * More Data Features
   * Weather
 * Look at more past data in the regression
-* {Chris add stuff here}
+* {Chris add stuff here
+
+# Screen Captures
+
+### Input Screen
+![Alt text](/Outputs/inputWindow.png?raw=true "Input Screen")              
+
+## Test 1
+### Input Screen
+![Alt text](/Outputs/test1/input.png?raw=true "Input Screen") 
+### Output Screen
+![Alt text](/Outputs/test1/output.png?raw=true "Output Screen")
+### 3D Plot
+![Alt text](/Outputs/test1/3dplot.png?raw=true "3D Plot")
+### 2D Plot
+![Alt text](/Outputs/test1/2dplot.png?raw=true "2D Plot")
