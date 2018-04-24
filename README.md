@@ -77,7 +77,8 @@ Starting with the data acquired from Retrosheet we pulled only the features of i
    * Day+Time
    
    ### Calculations
-The data used to regress changes depending on the home team selected by the user.(home teams play at their stadium for all games with few exceptions, such as the Houston Astros playing as home team at a different stadium during Hurricane Harvey)
+The data used to regress changes depending on the home team selected by the user.
+* Home teams play at their stadium for all games with few exceptions, such as the Houston Astros playing as home team at a different stadium during Hurricane Harvey
 
 Once user input is received the subset (only games where selected home team is playing at home) is then taken from a large data file and moved into a smaller file for easier traversal.
 
@@ -85,9 +86,9 @@ The reason we decided to create subsets upon user input is to reach a more accur
 
 Once the subset is moved into a smaller file, we find the relevant values from the file and assign values to the data.
 
-Since our inputs are 'classes' (Day/Night, Day of the Week, away team, home team) we must translate these classes into numerical values in order to regress on the data.
+Since our inputs are non-numerical (Day/Night, Day of the Week, away team, home team) we must translate these classes into numerical values in order to regress on the data.
 
-We assigned each 'class' a numerical value in a non-decreasing order of their average attendances (multiple attendance points per 'class' value).
+We assigned each data value a numerical value in a non-decreasing order by their average attendances over that value (multiple attendance points per data value).
 * This means that each subset of data will have different values for the 'classes'
      * For instance Monday could be assigned the value of 1 for one subset of data and 2 for another
 
