@@ -77,11 +77,11 @@ Starting with the data acquired from Retrosheet we pulled only the features of i
    * Day+Time
    
    ### Calculations
-The data used to regress changes depending on the home team selected by the user.(home teams play at their stadium for all games with few exceptions, such as the Houston Astros playing as home team during Hurricane Harvey)
+The data used to regress changes depending on the home team selected by the user.(home teams play at their stadium for all games with few exceptions, such as the Houston Astros playing as home team at a different stadium during Hurricane Harvey)
 
 Once user input is received the subset (only games where selected home team is playing at home) is then taken from a large data file and moved into a smaller file for easier traversal.
 
-The reason we decided to create subsets upon user input is to reach a more accurate prediction sense some stadiums draw larger crowds than others or have more seating.
+The reason we decided to create subsets upon user input is to reach a more accurate prediction since some stadiums draw larger crowds than others or have more seating.
 
 Once the subset is moved into a smaller file, we find the relevant values from the file and assign values to the data.
 
