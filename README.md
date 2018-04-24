@@ -77,13 +77,24 @@ Starting with the data acquired from Retrosheet we pulled only the features of i
    * Day+Time
    
    ### Calculations
-   The data used to regress is dependent on user input. Once we have user input we pull a subset of the data and regress on it.
+   The data used to regress changes depending on the home team selected by the user.(home teams play at their stadium for all games with few exceptions, such as the Houston Astros playing as home team during Hurricane Harvey)
+   Once user input is received the subset (only games where selected home team is playing at home) is then taken from a large data file and moved into a smaller file for easier traversal.
+   The reason we decided to create subsets upon user input is to reach a more accurate prediction sense some stadiums draw larger crowds than others or have more seating.
+   Once the subset is moved into a smaller file, we find the relevant values from the file and assign values to the data.
+   Since our inputs are 'classes' (Day/Night, Day of the Week, away team, home team) we must translate these classes into numerical values in order to regress on the data.
+   We assigned each 'class' a numerical value in a non-decreasing order of their average attendances (multiple attendance points per 'class' value).
+     * This means that each subset of data will have different values for the 'classes'
+          * for instance if Monday could be assigned the value of 1 for one subset of data and 2 for another
+   Once values have been assigned to the data, we can regress.
+   After regression is finished we translate the user input into the numerical values we used for the data
+   We are able to calculate the prediction given the weights from the regression and the user input values
+   
 
 # Future Work
 * More Data Features
   * Weather
 * Look at more past data in the regression
-* {Chris add stuff here
+* multiprocessing in order to have all graphs appear simultaneously
 
 # Screen Captures
 
