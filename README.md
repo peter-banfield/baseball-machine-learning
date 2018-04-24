@@ -18,7 +18,7 @@ Using linear regression to predict baseball game attendance.
 To use this repo as a program to predict baseball game attendance:
 1. clone this repo
 2. open a command line interface
-3. use python to run the main.py file
+3. use python to run the [main.py](/main.py) file
 4. make selections in the pop up window for each drop menu and click ok
 5. the next window will contain the predicted attendance for that game
 6. the next two windows will be plots of the data
