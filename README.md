@@ -89,7 +89,7 @@ Since our inputs are 'classes' (Day/Night, Day of the Week, away team, home team
 
 We assigned each 'class' a numerical value in a non-decreasing order of their average attendances (multiple attendance points per 'class' value).
 * This means that each subset of data will have different values for the 'classes'
-     * for instance if Monday could be assigned the value of 1 for one subset of data and 2 for another
+     * For instance Monday could be assigned the value of 1 for one subset of data and 2 for another
 
 Once values have been assigned to the data, we can regress.
 
